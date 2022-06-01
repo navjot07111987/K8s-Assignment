@@ -1,0 +1,36 @@
+1. Now try to delete the Pods one by one (first voting Pod, then worker pod, then db pod) 
+   and see what happens to the voting and result app after deleting
+Ans: Earlier results were lost and result app showing 50% each
+     Also, result app is not showing any vote now even if i vote from voting app.
+2. what happens after db pod deletion
+   Db application data is lost after db pod deletion. dp pod come up with new data
+3. complete the assignment by making the result pod work. (if you delete db pod, results would not be captured.
+   So repeat what we did in the class in order to make the result pod work.).
+Ans: Restarted the result pod
+
+Below are command used
+kubectl apply -f .  // To launch the application
+kubectl delete pod <pod-name> // To delete the vote, worker and db pod
+kubectl logs <pod-name> // To check pod logs
+kubectl get svc // To verify that nodeport/ClusterIP services
+kubectl get deployment // To see the deployments.
+
+Terms learnt in Kubernetes
+1. Deployment 2. StatefulSet 3. ReplicaSet 4. ReplicaController
+1. Stateful 2. Stateless
+1. Service 2.Nodeport 3. ClusterIP
+1. Pod 2. containers 3. Node
+1. Volumes 2. PersistentVolume 3. PersistVolumeClaim 4.ConfigMap 5. Secrets 6. hostpath 7. Storage class
+1. Job 2. CronJob
+1. namespace 2. Cluster  
+1. Master 2. Worker
+1. Pod Identity
+1. Docker Hub
+
+Process:
+Kubeproxy, kubelet, docker
+API Server, Scheduler, Controller-Manager
+
+
+
+CaliInterface, Calico Node(Pod running in each Node), tunl, 
